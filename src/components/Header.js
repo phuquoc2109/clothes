@@ -26,25 +26,25 @@ export default function Header() {
 
     const {pathname} = useLocation();
     const activeNav = mainNav.findIndex(e => e.path === pathname);
-    const [isClick, setIsClick] = useState(false);
+    const [isClick, setIsClick] = useState(true);
 
     const handleClick = () => {
         setIsClick(!isClick);
     }
 
-    const headerRef = useRef(null);
+    const headerRef = React.useRef(null);
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
-                headerRef.current.classList.add('shrink');
-            }else{
-                headerRef.current.classList.remove('shrink');
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                 headerRef.current.classList.add("shrink");
+            } else {
+                 headerRef.current.classList.remove("shrink");
             }
         })
         return () => {
-            window.removeEventListener('scroll');
-        }
-    },[])
+             window.removeEventListener("scroll", headerRef);
+        };
+    });
 
     return (
         <div className="header" ref={headerRef}>
@@ -64,7 +64,7 @@ export default function Header() {
                             mainNav.map((item, index) => (
                                 <div key={index} className={`header__menu__left__item ${index === activeNav ? 'active' : ''}`}>
                                     <Link to={item.path}>
-                                        <span>{item.display}</span>
+                                        <span onClick={() => setIsClick(true)}>{item.display}</span>
                                     </Link>
                                 </div>
                             ))
