@@ -43,7 +43,7 @@
                     }
                     &__title span,
                     &__description span,
-                    &__btn button {
+                    &__btn Button {
                         display: block;
                         transform: translateY(-100%);
                         transition: transform 0.5s ease;
@@ -52,7 +52,7 @@
                 &.active &__info {
                     &__title>span,
                     &__description>span,
-                    &__btn button {
+                    &__btn Button {
                         display: block;
                         transform: translateY(0);
                     }
@@ -135,7 +135,7 @@
         @each $color,
         $val in $colors {
             .color-#{$color} {
-                color: $val !important;
+                color: $val;
             }
             .bg-#{$color} {
                 background-color: $val;
@@ -144,7 +144,7 @@
         
         @media screen and (max-width: 990px) {
             .slider {
-                height: 150vh;
+                height: 120vh;
                 &__item {
                     display: flex;
                     flex-direction: column-reverse;
@@ -155,7 +155,7 @@
                     inset: 0;
                     &__info {
                         width: 100%;
-                        margin-bottom: 200px;
+                        margin-bottom: 100px;
                         padding: 70px 30px;
                         &__title,
                         &__description {
@@ -174,8 +174,6 @@
                     }
                     &__image {
                         margin-top: 10%;
-                        margin-bottom: -100%;
-                        width: 100%;
                         height: 40%;
                         display: flex;
                         justify-content: center;
@@ -187,7 +185,7 @@
                             position: relative;
                         }
                         .shape {
-                            $size: 250px;
+                            $size: 200px;
                             height: $size;
                             width: $size;
                             right: 1;
@@ -195,13 +193,14 @@
                     }
                 }
                 &__control {
-                    bottom: 150px;
+                    bottom: 170px;
                 }
             }
         }
         
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 700px) {
             .slider {
+                height: 140vh;
                 &__item {
                     &__info {
                         margin-bottom: 120px;
@@ -220,7 +219,28 @@
                         }
                     }
                     &__image {
-                        margin-top: 10%;
+                        padding-top: 70px;
+                        width: 100%;
+                        .shape {
+                            $size: 150px;
+                            height: $size;
+                            width: $size;
+                            right: 1;
+                        }
+                    }
+                }
+                &__control {
+                    bottom: 100px;
+                }
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .slider {
+                height: 150vh;
+                &__item {
+                    &__image {
+                        padding-top: 100px
                     }
                 }
             }

@@ -1,0 +1,60 @@
+.policy-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 80px;
+  padding: 5px 20px;
+  padding-left: 0;
+  margin-bottom: 30px;
+  border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 4px 1px #6b6b6b;
+          box-shadow: 2px 2px 4px 1px #6b6b6b;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  cursor: pointer;
+}
+
+.policy-card:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.policy-card__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  color: #316ddd;
+}
+
+.policy-card__icon i {
+  font-size: 2rem;
+}
+
+.policy-card__info__name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.policy-card__info__description {
+  font-size: 1srem;
+  color: #999;
+}
+/*# sourceMappingURL=policycard.css.map */

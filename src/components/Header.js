@@ -32,19 +32,19 @@ export default function Header() {
         setIsClick(!isClick);
     }
 
-    const headerRef = React.useRef(null);
+    const headerRef = useRef(null);
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+        window.addEventListener("scroll",() => {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                 headerRef.current.classList.add("shrink");
+                headerRef.current.classList.add("shrink");
             } else {
-                 headerRef.current.classList.remove("shrink");
+                headerRef.current.classList.remove("shrink");
             }
         })
         return () => {
-             window.removeEventListener("scroll", headerRef);
+             window.removeEventListener("scroll");
         };
-    });
+    },[]);
 
     return (
         <div className="header" ref={headerRef}>
@@ -74,13 +74,13 @@ export default function Header() {
                     
                     <div className="header__menu__right">
                         <div className="header__menu__right__item">
-                            <Link><i class="fas fa-search"></i></Link>
+                            <Link to='/search'><i className="fas fa-search"></i></Link>
                         </div>
                         <div className="header__menu__right__item">
-                            <Link><i class="fas fa-shopping-bag"></i></Link>
+                            <Link to='/shopcart'><i className="fas fa-shopping-bag"></i></Link>
                         </div>
                         <div className="header__menu__right__item">
-                            <Link><i class="fas fa-user"></i></Link>
+                            <Link to="/login"><i className="fas fa-user"></i></Link>
                         </div>
                     </div>
                 </div>

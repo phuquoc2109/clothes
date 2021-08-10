@@ -1,0 +1,39 @@
+.policy-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 80px;
+    padding: 5px 20px;
+    padding-left: 0;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px 1px rgb(107, 107, 107);
+    transition: transform 0.6s ease;
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-20px);
+    }
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        color: rgb(49, 109, 221);
+        i {
+            font-size: 2rem;
+        }
+    }
+    &__info {
+        &__name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: black;
+        }
+        &__description {
+            font-size: 1srem;
+            color: #999;
+        }
+    }
+}

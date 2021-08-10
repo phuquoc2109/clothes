@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/slider.css';
+import Button from '@material-ui/core/Button'
 
 const SliderItem = (props) => (
     <div className={`slider__item ${props.active ? 'active' : ''}`}>
@@ -12,8 +13,10 @@ const SliderItem = (props) => (
                 <span>{props.item.description}</span>
             </div>
             <div className="slider__item__info__btn">
-                <Link to={props.item.path}>
-                    <button>Xem chi tiết</button>
+                <Link to={props.item.path}> 
+                    <Button variant="contained" color="primary"  >
+                    <i className="fas fa-shopping-cart"></i>Xem chi tiết
+                    </Button>         
                 </Link>
             </div>
         </div>
@@ -51,34 +54,32 @@ export default function Slider(props) {
         }
     }, [nextSlide, timeOut]);
 
-
-
     return (
-        <div>
-            <div className="slider">
-                {
-                    data.map((item, index) => (
-                        <SliderItem item={item} key={index} active={index === activeSlide} />
-                    ))
-                }
-                {
-                    props.control ? (
-                        <div className="slider__control">
-                            <div className="slider__control__item">
-                                <i onClick={prevSlide} class="fas fa-chevron-left"></i>
+            <>
+                <div className="slider">
+                    {
+                        data.map((item, index) => (
+                            <SliderItem item={item} key={index} active={index === activeSlide} />
+                        ))
+                    }
+                    {
+                        props.control ? (
+                            <div className="slider__control">
+                                <div className="slider__control__item">
+                                    <i onClick={prevSlide} className="fas fa-chevron-left"></i>
+                                </div>
+                                <div className="slider__control__item">
+                                <div className="index">
+                                    {activeSlide + 1}/{data.length}
+                                </div>
+                                </div>
+                                <div onClick={nextSlide} className="slider__control__item">
+                                    <i className="fas fa-chevron-right"></i>
+                                </div>
                             </div>
-                            <div className="slider__control__item">
-                               <div className="index">
-                                   {activeSlide + 1}/{data.length}
-                               </div>
-                            </div>
-                            <div onClick={nextSlide} className="slider__control__item">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </div>
-                    ) : null
-                }
-            </div>
-        </div>
+                        ) : null
+                    }
+                </div>
+            </>
     )
 }

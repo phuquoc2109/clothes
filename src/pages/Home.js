@@ -1,8 +1,8 @@
 import React from 'react'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 import '../styles/home.css'
-import Main from '../pages/Main'
+import Main from './Main'
 
 export default function Home() {
     return (
