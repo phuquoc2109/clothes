@@ -1,3 +1,114 @@
-.catalog {
-    margin-top: 100px;
-}
+        .catalog {
+            margin-top: 100px;
+            padding: 50px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            &__button__filter {
+                display: none !important;
+            }
+            &__filter {
+                width: 20%;
+                display: block;
+                &__widget {
+                    margin-bottom: 1rem;
+                    &__title {
+                        font-size: 1.05rem;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                        i {
+                            display: none;
+                            position: absolute;
+                            right: 5%;
+                            font-size: 24px;
+                            color: rgb(56, 56, 56);
+                            cursor: pointer;
+                            &:hover {
+                                color: cadetblue;
+                            }
+                        }
+                    }
+                    &__content {
+                        color: #999;
+                        &__item {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            &__content {
+                flex-grow: 1;
+                width: 100%;
+            }
+        }
+        
+        @media screen and(max-width: 960px) {
+            .catalog {
+                flex-direction: column;
+                padding: 10px;
+                position: relative;
+                &__button__filter {
+                    display: inline !important;
+                    margin: 20px 50px !important;
+                }
+                &__filter {
+                    position: absolute;
+                    left: -100%;
+                    opacity: 0;
+                    transition: all .7s ease-out;
+                    &__active {
+                        display: block;
+                        position: absolute;
+                        padding: 10px;
+                        opacity: 1;
+                        width: 22%;
+                        left: 0;
+                        top: 10;
+                        z-index: 9;
+                        background-color: rgb(255, 255, 255);
+                        box-shadow: 2px 1px 4px 2px rgb(156, 156, 156);
+                        border-radius: 5px;
+                        transition: all .6s ease;
+                    }
+                    &__widget {
+                        &__title {
+                            i {
+                                display: block;
+                                top: 1%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media screen and(max-width: 820px) {
+            .catalog {
+                &__filter {
+                    &__active {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+        
+        @media screen and(max-width: 650px) {
+            .catalog {
+                &__filter {
+                    &__active {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+        
+        @media screen and(max-width: 500px) {
+            .catalog {
+                &__filter {
+                    &__active {
+                        width: 50%;
+                    }
+                }
+            }
+        }

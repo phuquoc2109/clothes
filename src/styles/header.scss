@@ -15,7 +15,6 @@
             background-color: white;
             z-index: 99;
             transition: all .2s ease-in-out;
-            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
             &.shrink {
                 height: 70px;
                 transition: all .2s ease-in-out;
@@ -114,9 +113,9 @@
                                 position: absolute;
                                 flex-direction: column;
                                 height: 82vh;
-                                top: 42.8px;
+                                top: 42.7px;
                                 left: -10%;
-                                width: 50%;
+                                width: 52.5%;
                                 z-index: 77;
                                 box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
                                 opacity: 1;

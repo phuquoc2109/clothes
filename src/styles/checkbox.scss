@@ -1,0 +1,9 @@
+.custom-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        color: rgb(255, 45, 108);
+    }
+}

@@ -68,7 +68,7 @@ export default function Main() {
                                 item
                                 key={index} 
                                 sm={6}
-                                md={6}
+                                md={4}
                                 lg={3}
                                 >
                                 <ProductCard
@@ -101,7 +101,7 @@ export default function Main() {
                                 item
                                 key={index} 
                                 sm={6}
-                                md={6}
+                                md={4}
                                 lg={3}
                                 >
                                 <ProductCard
@@ -143,7 +143,7 @@ export default function Main() {
                                 item
                                 key={index} 
                                 sm={6}
-                                md={6}
+                                md={4}
                                 lg={3}
                                 >
                                 <ProductCard

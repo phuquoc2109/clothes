@@ -33,16 +33,17 @@ export default function Header() {
     }
 
     const headerRef = useRef(null);
+    const handleScroll = () => {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            headerRef.current.classList.add("shrink");
+        } else {
+            headerRef.current.classList.remove("shrink");
+        }
+    }
     useEffect(() => {
-        window.addEventListener("scroll",() => {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                headerRef.current.classList.add("shrink");
-            } else {
-                headerRef.current.classList.remove("shrink");
-            }
-        })
+        window.addEventListener("scroll", handleScroll)
         return () => {
-             window.removeEventListener("scroll");
+             window.removeEventListener('scroll', handleScroll);
         };
     },[]);
 
