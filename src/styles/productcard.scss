@@ -2,12 +2,17 @@
     text-align: center;
     margin-bottom: 50px;
     width: 300px;
+    background: rgb(238, 174, 202);
+    background: linear-gradient(150deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 0.5) 100%);
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 3px rgb(119, 119, 119);
     &__image {
         padding-top: 100%;
         position: relative;
         margin-bottom: 30px;
         img {
             position: absolute;
+            border-radius: 5px;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -32,7 +37,7 @@
     }
     &__name {
         margin-bottom: 10px;
-        color: #999;
+        color: rgb(116, 116, 116);
         font-size: 1rem;
         font-weight: normal;
     }

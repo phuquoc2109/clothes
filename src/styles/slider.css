@@ -242,6 +242,14 @@
   background-color: #ff0000;
 }
 
+.color-yellow {
+  color: yellow;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
 @media screen and (max-width: 990px) {
   .slider {
     height: 120vh;

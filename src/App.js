@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Accessories from "./pages/Accessories";
 import Catalog from "./pages/Catalog";
 import Contact from "./pages/Contact";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact><Home /></Route>  
-          <Route path="/catalog"><Catalog /></Route> 
+          <Route path="/catalog" exact><Catalog /></Route> 
+          <Route path="/catalog/:slug"><Product /></Route> 
           <Route path="/accessories"><Accessories /></Route> 
           <Route path="/contact"><Contact /></Route> 
         </Switch>  
