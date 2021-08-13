@@ -6,6 +6,7 @@ import Accessories from "./pages/Accessories";
 import Catalog from "./pages/Catalog";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact><Home /></Route>  
           <Route path="/catalog" exact><Catalog /></Route> 
           <Route path="/catalog/:slug"><Product /></Route> 
+          <Route path="/cart"><Cart /></Route> 
           <Route path="/accessories"><Accessories /></Route> 
           <Route path="/contact"><Contact /></Route> 
         </Switch>  

@@ -22,10 +22,12 @@ export default function ProductCard(props) {
                  </div>
             </Link>
             <div className="product-card__btn">
+                <Link to={`/catalog/${props.slug}`}>
                     <Button variant="contained" color="primary"  >
                         <i className="fas fa-shopping-cart"></i>
                         Chọn mua
-                    </Button> 
+                    </Button>
+                </Link> 
             </div>
         </div>
     )

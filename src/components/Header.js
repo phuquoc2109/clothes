@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import logo from '../assets/images/Logo-2.png'
 import {Link, useLocation} from 'react-router-dom'
 import '../styles/header.css';
+import Badge from '@material-ui/core/Badge';
+import {useSelector} from 'react-redux'
 
 const mainNav = [
     {
@@ -27,6 +29,7 @@ export default function Header() {
     const {pathname} = useLocation();
     const activeNav = mainNav.findIndex(e => e.path === pathname);
     const [isClick, setIsClick] = useState(true);
+    const quanityProductCart = useSelector(state => state.carts);
 
     const handleClick = () => {
         setIsClick(!isClick);
@@ -78,7 +81,9 @@ export default function Header() {
                             <Link to='/search'><i className="fas fa-search"></i></Link>
                         </div>
                         <div className="header__menu__right__item">
-                            <Link to='/shopcart'><i className="fas fa-shopping-bag"></i></Link>
+                            <Badge badgeContent={quanityProductCart.length} color="secondary">
+                                <Link to='/cart'><i className="fas fa-shopping-bag"></i></Link>
+                            </Badge>
                         </div>
                         <div className="header__menu__right__item">
                             <Link to="/login"><i className="fas fa-user"></i></Link>

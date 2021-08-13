@@ -44,8 +44,8 @@ export default function Product() {
                                     container
                                     justifyContent="center"
                                     key={index}
-                                    xs={6}
-                                    sm={4}
+                                    xs={12}
+                                    sm={6}
                                     md={4}
                                     lg={3}
                                     >

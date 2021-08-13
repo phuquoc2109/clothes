@@ -1,0 +1,125 @@
+.cart {
+    min-height: 500px;
+    display: flex;
+    width: 100%;
+    &__product {
+        width: 65%;
+        text-align: center;
+        &__card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid black;
+            margin: 20px;
+            img {
+                height: 150px;
+            }
+            &__info {
+                text-transform: uppercase;
+                font-size: 16px;
+            }
+            &__price {
+                div {
+                    margin: 10px 0px;
+                }
+            }
+            &__quanity {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                align-self: center;
+                padding: 10px;
+            }
+        }
+    }
+    &__price {
+        width: 35%;
+        margin: 20px;
+        text-align: center;
+        &__money {
+            display: flex;
+            justify-content: space-around;
+            font-size: 18px;
+            padding: 20px;
+            border: 1px solid #999;
+            border-bottom: none;
+        }
+        &__description {
+            font-size: 18px;
+            padding: 20px;
+            border: 1px solid #999;
+        }
+        &__btn {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 20px;
+            a {
+                margin: 10px;
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 1250px) {
+    .cart {
+        min-height: 500px;
+        flex-direction: column;
+        width: 100%;
+        &__product {
+            width: 100%;
+        }
+        &__price {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+        }
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .cart {
+        &__product {
+            &__card {
+                margin: 30px 20px;
+                &__info {
+                    font-size: 14px;
+                }
+                &__price {
+                    div {
+                        margin: 10px 0px;
+                    }
+                }
+                &__quanity {
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 700px) {
+    .cart {
+        &__product {
+            &__card {
+                display: flex;
+                flex-direction: column;
+                margin: 30px 20px;
+                img {
+                    height: 200px;
+                    margin-bottom: 10px;
+                }
+                &__info {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+                &__price {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}

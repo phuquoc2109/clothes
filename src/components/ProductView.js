@@ -1,13 +1,17 @@
 import { Button } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { addCart } from '../slide/CartSlice';
 import '../styles/product.css';
 import numberWidthCommas from '../utils/NumberWithCommas';
 
+
 export default function ProductView(props) {
     const history = useHistory();
+    const dispatch = useDispatch();
     const {product} = props;
     const initImage = product.image01;
     const [previewImg, setPreviewImg] = useState(initImage);
@@ -38,29 +42,50 @@ export default function ProductView(props) {
         setSize(undefined)
         setImageActive1(false)
         setImageActive2(false)
+        
     },[product])
 
+    const initialCart = {
+        id: undefined,
+        title: product.title,
+        img: product.image01,
+        price: product.price,
+        color: color,
+        size: size,
+        quantity: quantity
+
+    }
+
     const check = () => {
-        if (color === undefined){
+        if (initialCart.color === undefined){
             toast.error('Vui lòng chọn màu sắc!!!');
             return false;
         }
-        if (size === undefined){
+        if (initialCart.size === undefined){
             toast.error('Vui lòng chọn size!!!');
             return false
         }
         return true
     }
 
-    const addToCart = () =>{
+    const addToCart = (e) =>{
         if(check()){
-            toast.success('Thêm vào giỏ hàng thành công')
-            console.log({size, color, quantity})
+            const idRandom = Math.random();
+            initialCart.id = idRandom
+            const action = addCart(initialCart);
+            dispatch(action);
+            toast.success('Thêm vào giỏ hàng thành công') 
+            setColor(undefined)
+            setSize(undefined)    
         }
-       
+        e.preventDefault();
     }
     const goToCart = () => {
         if(check()){
+            const idRandom = Math.random();
+            initialCart.id = idRandom;
+            const action = addCart(initialCart);
+            dispatch(action);
             toast.success('Mua luôn')
             history.push('/cart')
         }
@@ -167,7 +192,7 @@ export default function ProductView(props) {
                     </div>
                 </div>
                 <div className="product__info__item">
-                    <Button onClick={() => addToCart()} style={{margin:'0px 10px 10px 0px'}} variant="contained" color="primary">Thêm vào giỏ</Button>
+                    <Button onClick={(e) => addToCart(e)} style={{margin:'0px 10px 10px 0px'}} variant="contained" color="primary">Thêm vào giỏ</Button>
                     <Button onClick={() => goToCart()} style={{margin:'0px 10px 10px 0px'}} variant="contained" color="primary">Mua ngay</Button>
                 </div>
             </div>
