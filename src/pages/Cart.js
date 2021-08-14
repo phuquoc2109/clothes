@@ -57,7 +57,7 @@ export default function Cart() {
                         }
                     </div>
                     <div className="cart__price__btn">
-                        <Link><Button size="large" variant="contained" color="primary">Tiến hành đặt hàng</Button></Link>
+                        <Link to = "/cart/checkout"><Button size="large" variant="contained" color="primary">Tiến hành đặt hàng</Button></Link>
                         <Link to='/catalog'><Button size="large" variant="outlined" color="primary">Tiếp tục mua hàng</Button></Link>
                     </div>
                 </div> 
