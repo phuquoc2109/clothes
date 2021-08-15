@@ -1,6 +1,5 @@
 import { Typography } from '@material-ui/core';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
+
 import TextField from '@material-ui/core/TextField';
 import React, { useEffect, useState } from 'react';
 import quan_huyen from '../dist/quan_huyen.json';
@@ -37,7 +36,7 @@ export default function FormCheckout() {
     console.log({district,province,wards}) 
 
     return (
-        <div className="checkout__form">
+        <>
                     <div className="checkout__form__title">Thông tin giao hàng</div>                   
                     <form className="checkout__form__customer" action="">
                         <TextField
@@ -150,25 +149,9 @@ export default function FormCheckout() {
                                 
                             </select> */}
                         </div>
-                        <Typography align="center" color='secondary' variant="inherit">*(Có 1 số xã/phường vẫn chưa được update, nếu khi quý khách hàng chọn xã nơi mình ở mà không có thì xin mời quý khách hàng nhập xã/phường vào phần địa chỉ)</Typography>
+                        <Typography align="center" color='secondary' variant="inherit">*(Có 1 số xã/phường vẫn chưa được update, nếu khi quý khách hàng chọn xã nơi mình ở nhưng không có thì xin mời quý khách hàng nhập xã/phường vào phần địa chỉ)</Typography>
                     </form>
-                    <div className="checkout__form__payment">
-                        <div className="checkout__form__title">
-                            Phương thức thanh toán
-                        </div>
-                        <div className="checkout__form__payment__select">
-                            <FormControlLabel
-                            className="checkout__form__payment__select__one"
-                            control={<Switch  name="antoine" />}                      
-                            label="Thanh toán khi nhận hàng (COD)"
-                            />
-                            <FormControlLabel
-                            className="checkout__form__payment__select__two"
-                            control={<Switch  name="antoine" />}
-                            label="Thanh toán qua VNPAY (ATM/ VISA/ MASTER/ QR Code)"
-                            />
-                        </div>
-                    </div>
-                </div>
+                    
+                </>
     )
 }
