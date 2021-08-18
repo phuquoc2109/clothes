@@ -18,10 +18,13 @@ const cart = createSlice({
         removeProduct: (state, action) => {
             const productRemove = action.payload;
             return state.filter(product => product.id !== productRemove);
+        },
+        removeCart: (state, action) => {
+            return state = [];
         }
     }
 })
 
 const { reducer, actions } = cart;
-export const { addCart, editQuantity, removeProduct } = actions;
+export const { addCart, editQuantity, removeProduct, removeCart } = actions;
 export default reducer;
