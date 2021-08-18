@@ -8,8 +8,10 @@ export default function FormCheckout(props) {
         handleName,
         handlePhone, 
         handleAddress,
+        handleEmail,
         checkName,
         checkPhone,
+        checkEmail,
         checkAddress,
         handleValueProvince,
         handleValueDistrict,
@@ -24,13 +26,14 @@ export default function FormCheckout(props) {
     return (
         <>
                     <div className="checkout__form__title">Thông tin giao hàng</div>                   
-                    <form className="checkout__form__customer" action="">
+                    <div className="checkout__form__customer" >
                         <TextField
                         id="outlined-select-currency-native"
                         className="checkout__form__customer__input"
                         label="Họ tên"
                         placeholder="Nhập họ và tên"
                         onChange={handleName}
+                        name="name"
                         fullWidth
                         multiline
                         />
@@ -44,11 +47,25 @@ export default function FormCheckout(props) {
                         placeholder="Nhập số điện thoại"
                         type="number"
                         onChange={handlePhone}
+                        name="phone"
                         fullWidth
                         multiline
                         />
                          {
                             checkPhone ? '' : <Alert style={{fontSize: "14px"}} severity="error">Yêu cầu quý khách hàng nhập số điện thoại bắt đầu bằng số 0 và đủ 10 số</Alert>
+                        }
+                        <TextField
+                        id="outlined-select-currency-native"
+                        className="checkout__form__customer__input"
+                        label="Email"
+                        placeholder="Nhập email"
+                        onChange={handleEmail}
+                        name="email"
+                        fullWidth
+                        multiline
+                        />
+                        {
+                            checkEmail ? '' : <Alert style={{fontSize: "14px"}} severity="error">Yêu cầu quý khách hàng nhập đúng địa chỉ Email (Vd: abc@gmail.com) </Alert>
                         }
                          <TextField
                         id="outlined-select-currency-native"
@@ -56,12 +73,14 @@ export default function FormCheckout(props) {
                         label="Địa chỉ"
                         placeholder="Nhập địa chỉ"
                         onChange={handleAddress}
+                        name="address"
                         fullWidth
                         multiline
                         />
                        {
                             checkAddress ? '' : <Alert style={{fontSize: "14px"}} severity="error">Yêu cầu quý khách hàng nhập địa chỉ của mình</Alert>
                         }
+                         
                         <div  className="checkout__form__customer__select">
                             <TextField
                             id="outlined-select-currency-native"
@@ -74,6 +93,7 @@ export default function FormCheckout(props) {
                             helperText="Please select your Province/City"
                             variant="outlined"
                             onChange={handleValueProvince}
+                            name="province"
                             >
                             {  tinh.map((item,index) => (
                                 <option key={index} value={item[1].name}>
@@ -100,6 +120,7 @@ export default function FormCheckout(props) {
                             helperText="Please select your County/District"
                             variant="outlined"
                             onChange={handleValueDistrict}
+                            name="district"
                             >
                             {  province !== '' ? districtSelected?.map((item,index) => (
                                 <option key={index} value={item[1].name}>
@@ -128,6 +149,7 @@ export default function FormCheckout(props) {
                             helperText="Please select your Commune/Ward"
                             variant="outlined"
                             onChange={handleValueDiWards}
+                            name="wards"
                             >
                             {  district !== '' ? wardsSelected.map((item,index) => (
                                 <option key={index} value={item[1].name}>
@@ -147,7 +169,7 @@ export default function FormCheckout(props) {
                             </select> */}
                         </div>
                         <Typography align="center" color='secondary' variant="inherit">*(Có 1 số xã/phường vẫn chưa được update, nếu khi quý khách hàng chọn xã nơi mình ở nhưng không có thì xin mời quý khách hàng nhập xã/phường vào phần địa chỉ)</Typography>
-                    </form>
+                    </div>
                     
                 </>
     )

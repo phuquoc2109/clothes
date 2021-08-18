@@ -3,11 +3,36 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import numberWidthCommas from '../utils/NumberWithCommas';
 
-export default function CheckoutProduct({cartProduct, totalPrice, priceDiscount }) {
+export default function CheckoutProduct({cartProduct, totalPrice,priceDiscount }) {
     const priceShip = 30000;
+    const [valueDiscount, setValueDiscount] = useState('');
+    const [priceCodeDiscount, setPriceCodeDiscount] = useState(0);
+   
+    const [codeDiscount, setcodeDiscount] = useState('');
+    const discount = ["yolofive","yoloten","yolofifteen"];
+
+    const hadleDiscount = () => {
+        if(codeDiscount == "yolofive"){
+            setPriceCodeDiscount(0.05);
+        }else if(codeDiscount == "yoloten"){
+            setPriceCodeDiscount(0.1);
+        }
+        else if(codeDiscount == "yolofifteen"){
+            setPriceCodeDiscount(0.15);
+        }else{
+            setPriceCodeDiscount(0);
+        }
+        setValueDiscount('')
+    }
+
+    useEffect(() =>{
+         setcodeDiscount(discount.filter(item => item === valueDiscount.toLowerCase()))
+    },[valueDiscount])
+    
+
     return (
         <div>
             <div className="checkout__info__main">
@@ -32,8 +57,8 @@ export default function CheckoutProduct({cartProduct, totalPrice, priceDiscount 
                     <hr/>
                     <div className="checkout__info__discount">
                         <Typography style={{marginBottom:'10px'}} variant="subtitle2" display="block"><i>Bạn có mã giảm giá? Vui lòng nhập tại đây!</i></Typography>
-                        <TextField margin="dense" fullWidth className="checkout__info__discount__input" size="small"  placeholder="Nhập mã giảm giá..." variant="outlined" color="secondary" />
-                        <Button fullWidth className="checkout__info__discount__btn" variant="contained" color="secondary">Sử dụng</Button>
+                        <TextField value={valueDiscount} onChange={(e) => setValueDiscount(e.target.value)} margin="dense" fullWidth className="checkout__info__discount__input" size="small"  placeholder="Nhập mã giảm giá..." variant="outlined" color="secondary" />
+                        <Button onClick={hadleDiscount} fullWidth className="checkout__info__discount__btn" variant="contained" color="secondary">Sử dụng</Button>
                     </div>
                     <div className="checkout__info__payment">
                         <div className="checkout__info__payment__temp">
@@ -48,16 +73,23 @@ export default function CheckoutProduct({cartProduct, totalPrice, priceDiscount 
                             <Typography>Phí vận chuyển</Typography>
                             <Typography>
                                 {
-                                    totalPrice > 400000 ? '0 VNĐ' : numberWidthCommas(priceShip)
+                                    totalPrice > 400000 ? '0 VNĐ' : `${numberWidthCommas(priceShip)} VNĐ`
                                 }
+                                
+                            </Typography>
+                        </div>
+                        <div className="checkout__info__payment__priceship">
+                            <Typography>Số tiền được giảm</Typography>
+                            <Typography>
+                                    `- {numberWidthCommas(totalPrice * priceCodeDiscount)} VNĐ`
                             </Typography>
                         </div>
                         <hr />
                         <div className="checkout__info__payment__pricepayment" >
                             <Typography >Cần thanh toán</Typography>
-                            <Typography  variant="h5">
+                            <Typography variant="h5">
                                 {
-                                   totalPrice > 400000 ? `${numberWidthCommas(totalPrice)} VNĐ` : `${numberWidthCommas(totalPrice + priceShip)} VNĐ` 
+                                   totalPrice > 400000 ? `${numberWidthCommas(totalPrice - (totalPrice * priceCodeDiscount))} VNĐ` : `${numberWidthCommas((totalPrice + priceShip) - (totalPrice * priceCodeDiscount))} VNĐ` 
                                 }
                                 
                             </Typography>
@@ -72,6 +104,7 @@ export default function CheckoutProduct({cartProduct, totalPrice, priceDiscount 
                             className="checkout__form__payment__select__one"
                             control={<Switch  name="antoine" />}                      
                             label="Thanh toán khi nhận hàng (COD)"
+                            checked='true'
                             />
                             <FormControlLabel
                             className="checkout__form__payment__select__two"
@@ -81,8 +114,8 @@ export default function CheckoutProduct({cartProduct, totalPrice, priceDiscount 
                         </div>
                     </div>
                     <div className="checkout__info__discount">
-                        <TextField multiline rows={4} margin="dense" fullWidth placeholder="Lời nhắn đến YoLo..." variant="outlined" color="primary" />
-                        <Button fullWidth className="checkout__info__discount__btn" variant="contained" color="primary">Hoàn tất đơn hàng</Button>
+                        <TextField name="message" multiline rows={4} margin="dense" fullWidth placeholder="Lời nhắn đến YoLo..." variant="outlined" color="primary" />
+                        <Button type="submit" fullWidth className="checkout__info__discount__btn" variant="contained" color="primary">Hoàn tất đơn hàng</Button>
                     </div>
         </div>
     )
