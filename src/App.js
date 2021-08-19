@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Accessories from "./pages/Accessories";
+import AccessoryDetail from "./pages/AccessoryDetail";
 import Cart from "./pages/Cart";
 import Catalog from "./pages/Catalog";
 import Checkout from "./pages/Checkout";
@@ -19,7 +20,8 @@ function App() {
           <Route path="/catalog/:slug"><Product /></Route> 
           <Route path="/cart" exact><Cart /></Route> 
           <Route path="/cart/checkout"><Checkout /></Route> 
-          <Route path="/accessories"><Accessories /></Route> 
+          <Route path="/accessories" exact><Accessories /></Route>
+          <Route path="/accessories/:slug"><AccessoryDetail /></Route> 
           <Route path="/contact"><Contact /></Route> 
         </Switch>  
       </BrowserRouter>

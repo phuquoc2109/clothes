@@ -31,16 +31,20 @@ export default function Header() {
     const [isClick, setIsClick] = useState(true);
     const quanityProductCart = useSelector(state => state.carts);
 
+    const [ checkScroll, setCheckScroll] = useState(false);
+
     const handleClick = () => {
         setIsClick(!isClick);
     }
 
-    const headerRef = useRef(null);
+    // const headerRef = useRef(null);
     const handleScroll = () => {
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            headerRef.current.classList.add("shrink");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            setCheckScroll(true);
+            // headerRef.current.classList.add("shrink");
         } else {
-            headerRef.current.classList.remove("shrink");
+            setCheckScroll(false);
+            // headerRef.current.classList.remove("shrink");
         }
     }
     useEffect(() => {
@@ -51,7 +55,7 @@ export default function Header() {
     },[]);
 
     return (
-        <div className="header" ref={headerRef}>
+        <div className={`header ${checkScroll ? 'shrink' : ''}`}>
             <div className="container">
             <div className="header__menu__logo">
                         <Link to="/">
