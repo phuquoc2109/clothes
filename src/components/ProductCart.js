@@ -39,12 +39,12 @@ export default function ProductCart({item}) {
         <>
             <div className="cart__product__card">
                 <img src={item.img} alt="" />
-                <div className="cart__product__card__info">{item.title}</div>
-                <div className="cart__product__card__info">{item.color}</div>
-                <div className="cart__product__card__info">{item.size}</div>
+                <div className="cart__product__card__info">{item.title ? item.title : ''}</div>
+                <div className="cart__product__card__info">{item.color ? item.color : ''}</div>
+                <div className="cart__product__card__info">{item.size ? item.size : ''}</div>
                 <div className="cart__product__card__price">
                     <div>{numberWidthCommas(item.price)}</div>
-                    <del>{numberWidthCommas(399000)}</del>
+                    <del>{numberWidthCommas(item.priceOld ? item.priceOld : 399000)}</del>
                 </div>
                 <div className="cart__product__card__quanity">
                     <div className="product__info__item__quantity__btn"

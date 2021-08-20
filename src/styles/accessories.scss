@@ -1,14 +1,13 @@
 .accessories {
     margin-top: 100px;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(0, 117, 255, 0.45171572046787467) 100%);
 }
 
 .accessoryCard {
     margin: 25px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 1px black;
-    background-color: white;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, #ff9090 0%, rgb(187, 187, 187) 20%, rgb(187, 187, 187) 80%, #ff9090 100%);
     display: flex;
     flex-direction: column;
     img {
@@ -32,7 +31,7 @@
             font-size: 20px;
         }
         &__priceOld {
-            color: #999;
+            color: rgb(97, 97, 97);
             font-size: 18px;
             font-style: italic;
         }
@@ -53,5 +52,31 @@
 @media screen and(max-width: 650px) {
     .accessories__sort {
         flex-direction: column;
+    }
+}
+
+.bg {
+    animation: slide 10s ease-in-out infinite alternate;
+    background-image: linear-gradient(-45deg, #ff9d80, #fc8fb9, #91d1e9, #9bf1dd);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
     }
 }

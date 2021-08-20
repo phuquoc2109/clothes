@@ -26,7 +26,7 @@ export default function Checkout() {
     let totalPrice = 0;
     cartProduct.map(item => totalPrice += (item.price * item.quantity));
     let priceDiscount = 0
-    cartProduct.map(item => priceDiscount +=(item.quantity * 399000) )
+    cartProduct.map(item => priceDiscount += (item.quantity * (item.priceOld? item.priceOld : 399000 )))
     
     const [name, setName] = useState('');
     const [checkName, setCheckName] = useState(true); 

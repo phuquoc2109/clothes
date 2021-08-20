@@ -9,6 +9,7 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  margin-bottom: -5px;
 }
 
 .custom-checkbox:hover {

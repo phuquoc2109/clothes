@@ -40,7 +40,9 @@ export default function Accessories() {
     return (
         <div>
             <Header />
+            <div className="bg bg2"></div>
                 <div className="accessories">
+                    
                     <div className="accessories__sort">
                         <div className="accessories__sort__check">
                             <RadioGroup row onChange={handleChecked} >

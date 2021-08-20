@@ -37,14 +37,12 @@ export default function Main() {
                             lg={3}
                             key={index} 
                             >
-                            <Link to='/policy'>
                             <PolicyCard 
                             key={index} 
                             name={item.name}
                             description={item.description}
                             icon={item.icon}
                             />
-                            </Link>
                              </Grid>
                         ))
                     }

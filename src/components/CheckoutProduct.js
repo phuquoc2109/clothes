@@ -42,13 +42,13 @@ export default function CheckoutProduct({cartProduct, totalPrice,priceDiscount }
                                     <div className="checkout__info__product__select">
                                         <img src={item.img} alt="Ảnh có thể bị lỗi khi update" />
                                         <div>
-                                            <div className="checkout__info__product__select__name">{item.title} - {item.color.toUpperCase()} - {item.size.toUpperCase()}</div>
+                                            <div className="checkout__info__product__select__name">{item.title} {item.color ? (`- ${item.color.toUpperCase()} - ${item.size.toUpperCase()}`) : ''}</div>
                                             <div className="checkout__info__product__select__quantity">Số lượng: {item.quantity}</div>
                                         </div>
                                     </div>
                                     <div>
                                         <div className="checkout__info__product__price">{numberWidthCommas(item.price)} VNĐ</div>
-                                        <del style={{fontSize:"14px"}}>{numberWidthCommas(399000)} VNĐ</del>
+                                        <del style={{fontSize:"14px"}}>{numberWidthCommas(item.priceOld ? item.priceOld : 399000)} VNĐ</del>
                                     </div>
                                 </div>
                             ))

@@ -1,8 +1,5 @@
 .accessories {
   margin-top: 100px;
-  background: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(0, 117, 255, 0.451716)));
-  background: linear-gradient(180deg, white 0%, rgba(0, 117, 255, 0.451716) 100%);
 }
 
 .accessoryCard {
@@ -10,7 +7,9 @@
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 5px 1px black;
           box-shadow: 0px 0px 5px 1px black;
-  background-color: white;
+  background: black;
+  background: -webkit-gradient(linear, left top, right top, from(#ff9090), color-stop(20%, #bbbbbb), color-stop(80%, #bbbbbb), to(#ff9090));
+  background: linear-gradient(90deg, #ff9090 0%, #bbbbbb 20%, #bbbbbb 80%, #ff9090 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,7 +59,7 @@
 }
 
 .accessoryCard__price__priceOld {
-  color: #999;
+  color: #616161;
   font-size: 18px;
   font-style: italic;
 }
@@ -89,6 +88,47 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+.bg {
+  -webkit-animation: slide 10s ease-in-out infinite alternate;
+          animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(-45deg, #ff9d80, #fc8fb9, #91d1e9, #9bf1dd);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
   }
 }
 /*# sourceMappingURL=accessories.css.map */

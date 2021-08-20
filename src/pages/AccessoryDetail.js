@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import accessoryData from '../assets/fake-data/accessory'
 import AccessoryCard from '../components/AccessoryCard'
@@ -15,11 +15,15 @@ export default function AccessoryDetail() {
     const accessory = accessoryAll.find(item => item.slug === param.slug);
     const realateAccessory = accessoryData.getAccessory(8)
 
+    useEffect(() => {
+        window.scroll(0,0);
+    },[accessory])
 
     return (
         <div>
             <Header />
             <div style={{marginTop: '100px'}}>
+                <div  className="bg bg2" ></div>
                 <Section>
                     <SectionBody>
                         <AccessoryView accessory={accessory} />

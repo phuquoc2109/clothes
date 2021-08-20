@@ -86,7 +86,6 @@ export default function ProductView(props) {
             initialCart.id = idRandom;
             const action = addCart(initialCart);
             dispatch(action);
-            toast.success('Mua luôn')
             history.push('/cart')
         }
         

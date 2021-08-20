@@ -20,6 +20,9 @@
 .catalog__filter {
   width: 20%;
   display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
 }
 
 .catalog__filter__widget {
@@ -29,7 +32,6 @@
 .catalog__filter__widget__title {
   font-size: 1.05rem;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
 .catalog__filter__widget__title i {

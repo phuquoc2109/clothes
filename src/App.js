@@ -9,6 +9,7 @@ import Checkout from "./pages/Checkout";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path="/cart/checkout"><Checkout /></Route> 
           <Route path="/accessories" exact><Accessories /></Route>
           <Route path="/accessories/:slug"><AccessoryDetail /></Route> 
-          <Route path="/contact"><Contact /></Route> 
+          <Route path="/contact"><Contact /></Route>
+          <Route path="/search"><Search /></Route> 
         </Switch>  
       </BrowserRouter>
     </div>

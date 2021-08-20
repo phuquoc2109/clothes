@@ -11,12 +11,13 @@
             &__filter {
                 width: 20%;
                 display: block;
+                position: sticky;
+                top: 80px;
                 &__widget {
                     margin-bottom: 1rem;
                     &__title {
                         font-size: 1.05rem;
                         font-weight: 600;
-                        margin-bottom: 10px;
                         i {
                             display: none;
                             position: absolute;

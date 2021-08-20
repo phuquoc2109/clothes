@@ -166,7 +166,7 @@ const accessory = [{
         price: '139000',
         priceOld: '160000',
         image: accessory_04_image_01,
-        imageList: [accessory_04_image_01, accessory_01_image_02, accessory_01_image_03],
+        imageList: [accessory_04_image_01, accessory_04_image_02, accessory_04_image_03],
         imageBanner: accessory_04_banner,
         slug: "non-04"
     }, {
