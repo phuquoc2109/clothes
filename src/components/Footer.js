@@ -58,7 +58,7 @@ export default function Footer() {
                 <div className="footer__two__about">
                 {
                     footerAboutLinks.map((item, index) => (
-                        <Link key={index} to={item.path}>{item.name}</Link>
+                        <Link key={index} >{item.name}</Link>
                     ))
                 }
                 </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                 <div className="footer__three__about">
                 {
                     footerCustomerLinks.map((item, index) => (
-                        <Link key={index} to={item.path}>{item.name}</Link>
+                        <Link key={index} >{item.name}</Link>
                     ))
                 }
                 </div>

@@ -23,6 +23,10 @@
   position: -webkit-sticky;
   position: sticky;
   top: 80px;
+  -webkit-animation: top 1s ease forwards;
+          animation: top 1s ease forwards;
+  -webkit-transition: all .9s ease;
+  transition: all .9s ease;
 }
 
 .catalog__filter__widget {
@@ -60,6 +64,32 @@
       -ms-flex-positive: 1;
           flex-grow: 1;
   width: 100%;
+  -webkit-animation: expand 1s ease forwards;
+          animation: expand 1s ease forwards;
+  -webkit-transition: all .9s ease;
+  transition: all .9s ease;
+}
+
+@-webkit-keyframes expand {
+  0% {
+    -webkit-transform: translateY(1400px);
+            transform: translateY(1400px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes expand {
+  0% {
+    -webkit-transform: translateY(1400px);
+            transform: translateY(1400px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 960px) {

@@ -1,14 +1,18 @@
 import { Button, Grid } from '@material-ui/core';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import TextField from '@material-ui/core/TextField';
-import React, { useEffect, useState } from 'react';
+import Typography from '@material-ui/core/Typography';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import accessoryData from '../assets/fake-data/accessory';
 import productData from '../assets/fake-data/products';
+import AccessoryCard from '../components/AccessoryCard';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import '../styles/search.css';
-import AccessoryCard from '../components/AccessoryCard';
 import ProductCard from '../components/ProductCard';
-import { toast } from 'react-toastify';
+import '../styles/search.css';
 
 export default function Search() {
     const [valueSearch, setValueSearch] = useState('');
@@ -35,6 +39,12 @@ export default function Search() {
     return (
         <div >
             <Header />
+            <div style={{marginTop:'100px', marginLeft:'20px'}}>
+                    <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="Breadcrumbs">
+                        <Link to="/" >Trang chủ</Link>
+                        <Typography color="secondary">Tìm kiếm</Typography>
+                    </Breadcrumbs>
+                </div>
             <div className="search">
                 <div className="search__input">
                     <TextField value={valueSearch} onChange={(e) => setValueSearch(e.target.value)} style={{width:'300px', marginRight:'10px'}}  id="outlined-basic" label="Tìm kiếm" variant="outlined" />

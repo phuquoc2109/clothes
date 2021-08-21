@@ -90,7 +90,7 @@ export default function Header() {
                             </Badge>
                         </div>
                         <div className="header__menu__right__item">
-                            <Link to="/login"><i className="fas fa-user"></i></Link>
+                            <Link ><i className="fas fa-user"></i></Link>
                         </div>
                     </div>
                 </div>

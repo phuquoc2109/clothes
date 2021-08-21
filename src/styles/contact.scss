@@ -1,1 +1,117 @@
-.contact {}
+.contact {
+    iframe {
+        margin: 20px 0px;
+    }
+    &__form {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        width: 100%;
+        &__input {
+            width: 50%;
+            padding: 0px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            &__area {
+                display: flex;
+                &__lb {
+                    font-size: 18px;
+                    margin-right: 10px;
+                }
+                textarea {
+                    width: 350px;
+                    height: 180px;
+                    padding: 10px;
+                    &:focus {
+                        color: #495057;
+                        background-color: #fff;
+                        border: 3px solid black;
+                        border-color: #80bdff;
+                        outline: 0;
+                        box-shadow: 0px 0px 0px 0.25px rgb(0, 123, 255 / 25%);
+                    }
+                }
+            }
+            &__row {
+                margin-bottom: 10px;
+                label {
+                    font-size: 18px;
+                    margin-right: 10px;
+                }
+                input {
+                    width: 350px;
+                    height: 40px;
+                    padding: 10px;
+                    &:focus {
+                        color: #495057;
+                        background-color: #fff;
+                        border: 3px solid black;
+                        border-color: #80bdff;
+                        outline: 0;
+                        box-shadow: 0px 0px 0px 0.25px rgb(0, 123, 255 / 25%);
+                    }
+                }
+            }
+            button {
+                padding: 10px 40px;
+                background-color: rgb(247, 247, 75);
+                font-size: 20px;
+                margin: 10px 0px;
+                cursor: pointer;
+                border-radius: 5px;
+                &:hover {
+                    background-color: rgb(168, 168, 38);
+                }
+            }
+        }
+        &__output {
+            width: 50%;
+            padding: 0px 25px;
+            padding-right: 200px;
+            &__title {
+                margin-bottom: 20px;
+            }
+            &__location {
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+            &__pay {
+                margin-bottom: 20px;
+                font-size: 18px;
+                p {
+                    margin: 5px;
+                }
+            }
+            &__email {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .contact {
+        &__form {
+            display: flex;
+            flex-direction: column;
+            &__input {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                &__row {
+                    display: flex;
+                    flex-direction: column;
+                }
+                &__area {
+                    flex-direction: column;
+                }
+            }
+            &__output {
+                width: 100%;
+                padding: 20px 20%;
+                text-align: justify;
+            }
+        }
+    }
+}

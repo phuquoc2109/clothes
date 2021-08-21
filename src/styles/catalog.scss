@@ -13,6 +13,8 @@
                 display: block;
                 position: sticky;
                 top: 80px;
+                animation: top 1s ease forwards;
+                transition: all .9s ease;
                 &__widget {
                     margin-bottom: 1rem;
                     &__title {
@@ -41,6 +43,17 @@
             &__content {
                 flex-grow: 1;
                 width: 100%;
+                animation: expand 1s ease forwards;
+                transition: all .9s ease;
+            }
+        }
+        
+        @keyframes expand {
+            0% {
+                transform: translateY(1400px)
+            }
+            100% {
+                transform: translateY(0)
             }
         }
         
