@@ -131,12 +131,12 @@ export default function Checkout() {
         setLoading(false)
         if(name != '' && phone != '' && email != '' && address != '' 
         && province != '' && district != ''){
-            //    emailjs.sendForm('service_16or8k8', 'template_zjg8uzb', e.target, 'user_tAnd6vxmGTA480vCSTdsm')
-            //         .then((result) => {
-            //             console.log(result.text);
-            //         }, (error) => {
-            //             console.log(error.text);
-            //         });
+               emailjs.sendForm('service_16or8k8', 'template_zjg8uzb', e.target, 'user_tAnd6vxmGTA480vCSTdsm')
+                    .then((result) => {
+                        console.log(result.text);
+                    }, (error) => {
+                        console.log(error.text);
+                    });
                 setTimeout(() => {
                     const action = removeCart();
                     dispatch(action);
