@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import '../styles/footer.css'
+import '../styles/footer.scss'
 import logo from '../assets/images/Logo-2.png'
 
 const footerAboutLinks = [
@@ -58,7 +58,7 @@ export default function Footer() {
                 <div className="footer__two__about">
                 {
                     footerAboutLinks.map((item, index) => (
-                        <Link key={index} >{item.name}</Link>
+                        <a key={index} >{item.name}</a>
                     ))
                 }
                 </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                 <div className="footer__three__about">
                 {
                     footerCustomerLinks.map((item, index) => (
-                        <Link key={index} >{item.name}</Link>
+                        <a key={index} >{item.name}</a>
                     ))
                 }
                 </div>

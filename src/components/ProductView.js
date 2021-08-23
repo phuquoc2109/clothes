@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addCart } from '../slide/CartSlice';
-import '../styles/product.css';
+import '../styles/product.scss';
 import numberWidthCommas from '../utils/NumberWithCommas';
 
 

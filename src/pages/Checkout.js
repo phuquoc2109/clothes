@@ -18,7 +18,7 @@ import quan_huyen from '../dist/quan_huyen.json';
 import tinh_tp from '../dist/tinh_tp.json';
 import xa_phuong from '../dist/xa_phuong.json';
 import { removeCart } from '../slide/CartSlice';
-import '../styles/checkout.css';
+import '../styles/checkout.scss';
 
 export default function Checkout() {
     const cartProduct = useSelector(state => state.carts);

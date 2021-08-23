@@ -7,7 +7,7 @@ import AccessoryView from '../components/AccessoryView'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Section, { SectionBody, SectionTitle } from '../components/Section'
-import '../styles/accessoriesDetail.css'
+import '../styles/accessoriesDetail.scss'
 
 export default function AccessoryDetail() {
     const param = useParams();

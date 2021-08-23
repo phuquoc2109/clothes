@@ -12,7 +12,7 @@ import AccessoryCard from '../components/AccessoryCard';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ProductCard from '../components/ProductCard';
-import '../styles/search.css';
+import '../styles/search.scss';
 
 export default function Search() {
     const [valueSearch, setValueSearch] = useState('');

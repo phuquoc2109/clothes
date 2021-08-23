@@ -1,6 +1,6 @@
 import { Checkbox } from '@material-ui/core';
 import React from 'react'
-import '../styles/checkbox.css'
+import '../styles/checkbox.scss'
 
 export default function CheckBox(props) {
 

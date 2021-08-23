@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/main.css'
+import '../styles/main.scss'
 import Slider from '../components/Slider'
 import heroSliderData from '../assets/fake-data/hero-slider'
 import Section, {SectionTitle, SectionBody} from '../components/Section' 

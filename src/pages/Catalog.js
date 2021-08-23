@@ -2,7 +2,7 @@ import {  Grid,Button } from '@material-ui/core'
 import React, { useEffect } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import '../styles/catalog.css';
+import '../styles/catalog.scss';
 import productData from '../assets/fake-data/products';
 import ProductCard from '../components/ProductCard';
 import category from '../assets/fake-data/category';

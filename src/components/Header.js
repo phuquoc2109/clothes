@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import logo from '../assets/images/Logo-2.png'
 import {Link, useLocation} from 'react-router-dom'
-import '../styles/header.css';
+import '../styles/header.scss';
 import Badge from '@material-ui/core/Badge';
 import {useSelector} from 'react-redux'
 
@@ -90,7 +90,7 @@ export default function Header() {
                             </Badge>
                         </div>
                         <div className="header__menu__right__item">
-                            <Link ><i className="fas fa-user"></i></Link>
+                            <i className="fas fa-user"></i>
                         </div>
                     </div>
                 </div>

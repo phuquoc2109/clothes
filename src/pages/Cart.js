@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import ProductCart from '../components/ProductCart'
-import '../styles/cart.css'
+import '../styles/cart.scss'
 import numberWidthCommas from '../utils/NumberWithCommas'
 
 

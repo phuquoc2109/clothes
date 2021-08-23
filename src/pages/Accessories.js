@@ -10,7 +10,7 @@ import accessoryData from '../assets/fake-data/accessory'
 import AccessoryCard from '../components/AccessoryCard'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import '../styles/accessories.css'
+import '../styles/accessories.scss'
 
 export default function Accessories() {
     const initAccessorys = accessoryData.getAllAccessory();

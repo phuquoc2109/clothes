@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/policycard.css';
+import '../styles/policycard.scss';
 
 export default function PolicyCard(props) {
     return (
